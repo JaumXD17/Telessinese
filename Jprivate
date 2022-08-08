@@ -1,0 +1,91 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("JoaozimPrivate", "Sentinel")
+--tabs
+local Misc = Window:NewTab("Misc")
+local Player = Window:NewTab("Player")
+local TP = Window:NewTab("Teleportes")
+local Config = Window:NewTab("Config")
+
+
+--sections
+local ConfigSection = Config:NewSection("Config")
+local PlayerSection = Player:NewSection("Movimento")
+local ArmaSection = Misc:NewSection("Arma")
+local MoneySection = Misc:NewSection("Player")
+local TPSection = TP:NewSection("TP")
+
+--keybind
+ConfigSection:NewKeybind("Keybind Menu", "KeybindInfo", Enum.KeyCode.F, function()
+    Library:ToggleUI()
+end)
+
+--tabs
+ArmaSection:NewToggle("Agua Infinita", "Reabastece seu tanque infinitamente", function(state)
+    if state then
+            _G.agua = true
+            while _G.agua == true do wait()
+            local ohBoolean1 = true
+            game:GetService("ReplicatedStorage").Remotes.RefillRemote:FireServer(ohBoolean1)
+            end
+    else
+        _G.agua = false
+        while _G.agua == false do wait()
+        local ohBoolean1 = false
+        game:GetService("ReplicatedStorage").Remotes.RefillRemote:FireServer(ohBoolean1)
+        end
+    end
+end)
+
+MoneySection:NewToggle("Puxar Dinheiro", "Recebe Dinheiro", function(state)
+    if state then
+        _G.money = true
+        while _G.money == true do wait()
+        local ohNumber1 = 50650525093078.61
+        local ohNumber2 = 5120
+        game:GetService("ReplicatedStorage").Remotes.SurfaceCompleted:FireServer(ohNumber1, ohNumber2)
+        end
+    else
+        _G.money = false
+        if _G.money == false then return end
+    end
+    end)
+
+    -- Sliders
+    PlayerSection:NewSlider("Velocidade", "SliderInfo", 250, 16, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+    end)
+
+    PlayerSection:NewSlider("Jumppower", "Changes the jumppower", 250, 50, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+    end)
+    
+    --buttons
+    TPSection:NewButton("Spawn", "ButtonInfo", function()
+        local ohNumber1 = -1
+        game:GetService("ReplicatedStorage").Remotes.TeleportPlayer:InvokeServer(ohNumber1)
+    end)
+
+    TPSection:NewButton("Estacionamento", "ButtonInfo", function()
+        local ohNumber1 = 1
+        game:GetService("ReplicatedStorage").Remotes.TeleportPlayer:InvokeServer(ohNumber1)
+    end)
+
+    TPSection:NewButton("Jardim", "ButtonInfo", function()
+        local ohNumber1 = 2
+        game:GetService("ReplicatedStorage").Remotes.TeleportPlayer:InvokeServer(ohNumber1)
+    end)
+
+    TPSection:NewButton("Mansão", "ButtonInfo", function()
+        local ohNumber1 = 3
+        game:GetService("ReplicatedStorage").Remotes.TeleportPlayer:InvokeServer(ohNumber1)
+    end)
+
+    TPSection:NewButton("Escola", "ButtonInfo", function()
+        local ohNumber1 = 4
+        game:GetService("ReplicatedStorage").Remotes.TeleportPlayer:InvokeServer(ohNumber1)
+    end)
+
+    ConfigSection:NewButton("Infinite Yield", "Info", function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    end)
+    --dropdowns
