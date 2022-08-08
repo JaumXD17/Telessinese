@@ -35,7 +35,7 @@ MiscSection:NewToggle("Puxar Dinheiro", "", function(state)
                 firetouchinterest(playerHead, v.Parent, 0)
                 wait(0.1)
                 firetouchinterest(playerHead, v.Parent, 1)
-                wait(10)
+                wait(8)
                 end
             end
             end
@@ -100,7 +100,7 @@ end)
 
 --config
 local ConfigSection = ConfigTab:NewSection("Bind Menu")
-ConfigSection:NewKeybind("Keybind Menu", "KeybindInfo", Enum.KeyCode.F, function()
+ConfigSection:NewKeybind("Keybind Menu", "KeybindInfo", Enum.KeyCode.Return, function()
     Library:ToggleUI()
 end)
 
