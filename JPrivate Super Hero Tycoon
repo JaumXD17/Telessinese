@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("JPrivate", "BloodTheme")
+local Window = Library.CreateLib("JPrivate Super Hero Tycoon", "BloodTheme")
 local MiscTab = Window:NewTab("Misc")
 local TPTab = Window:NewTab("Teleportes")
 local PlayerTab = Window:NewTab("Player")
