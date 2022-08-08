@@ -1,0 +1,106 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("JPrivate", "BloodTheme")
+local MiscTab = Window:NewTab("Misc")
+local TPTab = Window:NewTab("Teleportes")
+local PlayerTab = Window:NewTab("Player")
+local ConfigTab = Window:NewTab("Config")
+--misc
+local MiscSection = MiscTab:NewSection("Misc")
+
+MiscSection:NewButton("Infinite Yield", "Info", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+MiscSection:NewButton("Felipe Menu", "", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/DebugCrazY/FMobfuscated/main/fm.lua'))()
+end)
+
+MiscSection:NewButton("Telessinese", "", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/JaumXD17/Telessinese/main/Telessinesescript'))()
+end)
+
+MiscSection:NewButton("Fling Invisivel", "", function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/JaumXD17/Telessinese/main/Flinginvisivel'))()
+end)
+
+local MiscSection = MiscTab:NewSection("Miscellaneous")
+
+MiscSection:NewToggle("Puxar Dinheiro", "", function(state)
+    if state then
+        _G.money = true
+        while _G.money == true do
+            local playerHead = game.Players.LocalPlayer.Character.Head
+            for i, v in pairs(game:GetService("Workspace").Crates.CashCrate:GetDescendants()) do
+                if v.Name == "TouchInterest" and v.Parent then
+                firetouchinterest(playerHead, v.Parent, 0)
+                wait(0.1)
+                firetouchinterest(playerHead, v.Parent, 1)
+                wait(6)
+                end
+            end
+            end
+    else
+        _G.money = false
+        if _G.money == false then return end
+    end
+end)
+
+--player
+local PlayerSection = PlayerTab:NewSection("Movimento")
+
+PlayerSection:NewSlider("Velocidade", "", 250, 16, function(v)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+end)
+
+PlayerSection:NewSlider("Jumppower", "", 250, 50, function(v)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+end)
+
+--teleportes
+local TPSection = TPTab:NewSection("Teleportes")
+TPSection:NewButton("Lanterna Verde", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1231.2959, 62.3048592, 1250.84277, 0.582128942, -3.36334196e-08, 0.813096464, 1.03032242e-07, 1, -3.24003757e-08, -0.813096464, 1.02636349e-07, 0.582128942)
+end)
+
+TPSection:NewButton("Homem Formiga", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1211.11194, 62.306324, 948.180481, 0.63745898, -6.11577136e-08, -0.770484269, 4.58728309e-08, 1, -4.14228616e-08, 0.770484269, -8.93891983e-09, 0.63745898)
+end)
+
+TPSection:NewButton("Batman", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1318.83521, 62.3070908, 905.061096, 0.0279565901, 1.37189131e-08, -0.999609113, -7.13799109e-09, 1, 1.35246454e-08, 0.999609113, 6.75709799e-09, 0.0279565901)
+end)
+
+TPSection:NewButton("Pantera Negra", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1505.68384, 62.305645, 1022.78308, 0.650856018, 5.99107963e-08, 0.759201169, 4.75843587e-09, 1, -8.29922939e-08, -0.759201169, 5.76286467e-08, 0.650856018)
+end)
+
+TPSection:NewButton("Homem de Ferro", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1431.12964, 62.3080826, 933.529358, -0.580798686, -1.77976531e-08, -0.814047217, -4.7746525e-08, 1, 1.2202567e-08, 0.814047217, 4.59551615e-08, -0.580798686)
+end)
+
+TPSection:NewButton("Homem Aranha", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1157.08582, 62.7059135, 1161.83911, 0.950774252, -2.65298694e-09, 0.309884429, 1.70382606e-08, 1, -4.37148522e-08, -0.309884429, 4.6842846e-08, 0.950774252)
+end)
+
+TPSection:NewButton("SuperHomem", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1148.84326, 62.3044052, 1046.65613, 0.729169488, 2.46589646e-08, -0.684333146, -5.272208e-09, 1, 3.04159329e-08, 0.684333146, -1.85704234e-08, 0.729169488)
+end)
+
+TPSection:NewButton("Flash", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1343.5658, 62.306324, 1279.34229, -0.0282757599, -5.31936095e-08, 0.999600172, -2.82364283e-08, 1, 5.24161621e-08, -0.999600172, -2.67430327e-08, -0.0282757599)
+end)
+
+TPSection:NewButton("Hulk", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1513.4989, 62.3065605, 1138.18604, 0.0171745978, -3.07843173e-08, 0.999852479, 2.20397265e-08, 1, 3.04102805e-08, -0.999852479, 2.15141913e-08, 0.0171745978)
+end)
+
+TPSection:NewButton("Thor", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1451.54297, 62.3047562, 1236.41724, -0.910877585, 4.50699389e-09, 0.412676662, 1.88260394e-08, 1, 3.06322718e-08, -0.412676662, 3.56713166e-08, -0.910877585)
+end)
+
+--config
+local ConfigSection = ConfigTab:NewSection("Bind Menu")
+ConfigSection:NewKeybind("Keybind Menu", "KeybindInfo", Enum.KeyCode.F, function()
+    Library:ToggleUI()
+end)
+
