@@ -35,7 +35,7 @@ MiscSection:NewToggle("Puxar Dinheiro", "", function(state)
                 firetouchinterest(playerHead, v.Parent, 0)
                 wait(0.1)
                 firetouchinterest(playerHead, v.Parent, 1)
-                wait(8)
+                wait(9)
                 end
             end
             end
