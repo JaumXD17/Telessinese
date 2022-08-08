@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("JPrivate Pressure Wash", "Sentinel")
+local Window = Library.CreateLib("JPrivate Pressure Wash", "BloodTheme")
 --tabs
 local Misc = Window:NewTab("Misc")
 local Player = Window:NewTab("Player")
